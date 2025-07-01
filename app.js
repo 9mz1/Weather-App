@@ -1,5 +1,8 @@
 const searchBtn = document.querySelector("#search-btn");
 const searchBar = document.querySelector("#search-bar");
+const settingsMenu = document.querySelector(".settings-menu");
+const settingsBtn = document.querySelector("#settings-btn");
+const closeBtn = document.querySelector("#close-btn");
 
 let apiKey;
 let unit;
@@ -61,6 +64,12 @@ searchBar.addEventListener("keydown", function(event) {
     }
 });
 
-document.addEventListener("click", () => {
-        fetchData("Dubai");
+settingsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    settingsMenu.classList.remove('hidden');
+});
+
+closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    settingsMenu.classList.add('hidden');
 });

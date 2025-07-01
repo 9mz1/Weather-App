@@ -14,31 +14,59 @@
             <img class="logo"src="./assets/images/Name.png" alt="The Weather Logo">
             <input type="text" id="search-bar" placeholder="Enter City Name">
             <div class="links">
-                <a href=""><i id="about" class='bxr bx-cog'></i></a>
+                <a id="settings-btn" href="#"><i class='bxr bx-cog'></i></a>
                 <a href="https://github.com/9mz1" target="_blank" norefferer nooppener><i class='bxl  bx-github'></i></a>
             </div>
         </div>
         
         <div class="content-container">
             <div class="info-container">
-                <p id="location"></p>
+                <p id="location">-</p>
                 <div class="weather-info">
                     <div class="left">
                         <img id="weather-icon">
                     </div>
                     <div class="right">
                         <div class="info-boxes temperature">
-                            <p id="temp"></p>
+                            <p id="temp">-</p>
                             <p>Temperature</p>
                         </div>
                         <div class="info-boxes precipprob">
-                            <p id="precipprob"></p>
+                            <p id="precipprob">-</p>
                             <p>Precipitation Probability</p>
                         </div>
-                        <p id="desc"></p>
+                        <p id="desc">-</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="settings-menu hidden">
+            <div class="nav-bar">
+                <h1>Settings</h1>
+                <div class="links">
+                    <a id="close-btn" href="#"><i class='bxr  bx-x'></i></a>
+                </div>
+            </div>
+
+            <div class="settings-container">
+                <div class="settings units">
+                    <p>Units</p>
+                    <div class="options">
+                        <button class="active" id="metric">Metric</button>
+                        <button id="imperial">Imperial</button>
+                    </div>
+                </div>
+                <div class="settings theme-mode">
+                    <p>Theme</p>
+                    <div class="options">
+                        <button class="disabled" id="light">Light</button>
+                        <button class="active" id="dark">Dark</button>
+                    </div>
+                </div>
+            </div>
+
+            <p id="footer">Powered By the <a href="http://https://www.visualcrossing.com/" target="_blank">Visual Crossing</a> API</p>
         </div>
     </div>
     <script src="app.js"></script>
