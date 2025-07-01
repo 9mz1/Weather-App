@@ -9,24 +9,36 @@
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="nav-bar">
-        <img class="logo"src="./assets/images/Name.png" alt="The Weather Logo">
-        <input type="text" id="search-bar" placeholder="Enter City Name">
-        <div class="links">
-            <a href=""><i id="about" class='bxr bx-badge-exclamation'></i></a>
-            <a href="https://github.com/9mz1" target="_blank" norefferer nooppener><i class='bxl  bx-github'></i></a>
+    <div class="container">
+        <div class="nav-bar">
+            <img class="logo"src="./assets/images/Name.png" alt="The Weather Logo">
+            <input type="text" id="search-bar" placeholder="Enter City Name">
+            <div class="links">
+                <a href=""><i id="about" class='bxr bx-cog'></i></a>
+                <a href="https://github.com/9mz1" target="_blank" norefferer nooppener><i class='bxl  bx-github'></i></a>
+            </div>
         </div>
-    </div>
-    
-    <div class="content-container">
-        <p id="location"></p>
-        <div class="left">
-            <img id="weather-icon">
-        </div>
-        <div class="right">
-            <p id="temp"></p>
-            <p id="precipprob"></p>
-            <p id="desc"></p>
+        
+        <div class="content-container">
+            <div class="info-container">
+                <p id="location"></p>
+                <div class="weather-info">
+                    <div class="left">
+                        <img id="weather-icon">
+                    </div>
+                    <div class="right">
+                        <div class="info-boxes temperature">
+                            <p id="temp"></p>
+                            <p>Temperature</p>
+                        </div>
+                        <div class="info-boxes precipprob">
+                            <p id="precipprob"></p>
+                            <p>Precipitation Probability</p>
+                        </div>
+                        <p id="desc"></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>

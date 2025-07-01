@@ -21,6 +21,11 @@
     transition: 0.2s ease all;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--secondary-color);
@@ -28,6 +33,12 @@ body {
 }
 
 
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
 .nav-bar {
     display: flex;
@@ -37,7 +48,7 @@ body {
 }
 
 .nav-bar > .logo {
-    width: 240px;
+    width: 260px;
 }
 
 .nav-bar > #search-bar {
@@ -80,4 +91,90 @@ body {
 .nav-bar .links a:hover {
     box-shadow: rgba(225, 131, 0, 0.77) 0px 0px 15px;
     background-color: var(--tertiary-color);
+}
+
+
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red */
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 50px;
+    width: 45vw;
+    height: auto;
+    background-color: var(--tertiary-color);
+    padding: 3rem 24rem;
+    border-radius: 30px;
+    box-shadow: rgba(225, 131, 0, 0.558) 0px 0px 4px;
+}
+.info-container:hover{
+    /* transform: scale(1.3); */
+    box-shadow: rgba(225, 131, 0, 0.77) 0px 0px 15px;
+}
+
+.info-container > #location {
+    font-family: 'Newake', sans-serif;
+    font-size: 2.8rem;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 140px;
+}
+
+.left > img {
+    background-color: var(--bg-color);
+    width: 160px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: rgba(225, 131, 0, 0.229) 0px 0px 4px;
+}
+
+.right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    /* grid-template-rows: 1fr 1fr; */
+    gap: 40px;
+}
+
+.info-boxes{
+    height: 20vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.temperature, .precipprob, #desc {
+    font-weight: 400;
+    padding: 14px 40px;
+    background-color: var(--bg-color);
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: rgba(225, 131, 0, 0.229) 0px 0px 4px;
+}
+
+#temp, #precipprob, #desc {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#desc {
+    padding: 30px;
+    font-weight: 400;
+    grid-column: 1/3;
 }
