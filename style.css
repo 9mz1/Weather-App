@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --bg-color: #1D1D1D;
     --primary-color: #FF8C00;
@@ -5,13 +7,77 @@
     --tertiary-color: #1F1F1F;
 }
 
+@font-face {
+    font-family: 'Newake', sans-serif;
+    src: url(./assets/fonts/NewakeFont-Demo.otf) format('opentype');
+}
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: 0.2s ease all;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--secondary-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.nav-bar > .logo {
+    width: 240px;
+}
+
+.nav-bar > #search-bar {
+    padding: 0.8rem;
+    width: 640px;
+    height: 38px;
+    color: var(--secondary-color);
+    background-color: var(--tertiary-color);
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(225, 131, 0, 0.558) 0px 0px 4px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+.nav-bar > #search-bar:hover {
+    box-shadow: rgba(225, 131, 0, 0.77) 0px 0px 15px;
+}
+.nav-bar > #search-bar:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+.nav-bar > .links {
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+}
+
+.nav-bar .links a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 0.45rem;
+    cursor: pointer;
+}
+
+.nav-bar .links a:hover {
+    box-shadow: rgba(225, 131, 0, 0.77) 0px 0px 15px;
+    background-color: var(--tertiary-color);
 }
