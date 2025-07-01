@@ -1,4 +1,5 @@
 const searchBtn = document.querySelector("#search-btn");
+const searchBar = document.querySelector("#search-bar");
 
 let apiKey;
 let unit;
@@ -42,13 +43,18 @@ function displayData(data) {
     const precipprobText = document.querySelector("#precipprob");
     const locationText = document.querySelector("#location");
     const descText = document.querySelector("#desc");
+    const weatherIcon = document.querySelector('#weather-icon');
 
     tempText.textContent = `Tempreature: ${data.currentConditions.temp}`;
     precipprobText.textContent = `Precipitation Probability: ${data.currentConditions.precipprob}`;
     locationText.textContent = `Location: ${data.address}`;
     descText.textContent = `Description: ${data.description}`;
+    weatherIcon.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${data.currentConditions.icon}.png`;
+    weatherIcon.style.color = "#FF8C00";
 }
 
-searchBtn.addEventListener("click", () => {
-    fetchData(getSearchData());
+searchBar.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        fetchData(getSearchData());
+    }
 });

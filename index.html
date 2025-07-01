@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="style.css">
+     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
 </head>
 <body>
-    <input type="text" name="location" id="search-bar">
-    <button id="search-btn">Search</button>
-    <p id="temp"></p>
-    <p id="precipprob"></p>
-    <p id="location"></p>
-    <p id="desc"></p>
+    <div class="nav-bar">
+        <div class="logo"><img src="./assets/images/Name.png" alt="The Weather Logo"></div>
+        <input type="text" id="search-bar">
+        <div class="links">
+            <i id="about" class='bxr bx-badge-exclamation'></i>
+            <a href="https://github.com/9mz1" target="_blank" norefferer nooppener><i class='bxl  bx-github'></i></a>
+        </div>
+    </div>
+    
+    <div class="content-container">
+        <div class="left">
+    
+        </div>
+        <div class="right">
+            <p id="temp"></p>
+            <p id="precipprob"></p>
+            <p id="location"></p>
+            <p id="desc"></p>
+            <img id="weather-icon">
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
