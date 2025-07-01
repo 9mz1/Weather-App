@@ -14,11 +14,12 @@ async function fetchData(location) {
         const response = await fetch(url);
 
         if (!response.ok) {
-            throw new Error("could not fetch data");
+            throw new Error("could not fetch data... Use valid city names");   
         }
 
         const data = await response.json();
         displayData(data);
+        searchBar.value = "";
         console.log(data);
         console.log(data.currentConditions.conditions);
         console.log(data.currentConditions.temp);
@@ -28,12 +29,13 @@ async function fetchData(location) {
     }
 
     catch(error) {
-        console.log(error);
+        console.error(error);
+        alert(error);
     }
 }
 
 function getSearchData() {
-    const searchBarValue = document.getElementById("search-bar").value.trim().toLowerCase();
+    const searchBarValue = searchBar.value.trim().toLowerCase();
     console.log(searchBarValue);
     return searchBarValue;
 }
