@@ -1,2 +1,4 @@
-# Weather-App
-Weather Website
+# The Weather App
+Check Your temperature and precipitation probiability
+
+
