@@ -3,14 +3,15 @@ const searchBar = document.querySelector("#search-bar");
 const settingsMenu = document.querySelector(".settings-menu");
 const settingsBtn = document.querySelector("#settings-btn");
 const closeBtn = document.querySelector("#close-btn");
+const metricBtn = document.querySelector("#metric");
+const imperialBtn = document.querySelector("#imperial");
 
 let apiKey;
-let unit;
+let unit = 'metric';
 
 // fetch data from API
 async function fetchData(location) {
     apiKey = '4HMHSPKW4Q8RWJSAE2N84NCF5';
-    unit = 'metric'; //us for imperial units
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unit}&key=${apiKey}`;
 
     try {
@@ -22,7 +23,7 @@ async function fetchData(location) {
 
         const data = await response.json();
         displayData(data);
-        searchBar.value = "";
+        // searchBar.value = "";
         console.log(data);
         console.log(data.currentConditions.conditions);
         console.log(data.currentConditions.temp);
@@ -72,4 +73,20 @@ settingsBtn.addEventListener("click", (e) => {
 closeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     settingsMenu.classList.add('hidden');
+});
+
+metricBtn.addEventListener("click", () => {
+    unit = 'metric';
+    metricBtn.classList.add('active');
+    imperialBtn.classList.remove('active');
+    fetchData(getSearchData());
+    console.log('Metric');
+});
+
+imperialBtn.addEventListener("click", () => {
+    unit = 'us';
+    imperialBtn.classList.add('active');
+    metricBtn.classList.remove('active');
+    fetchData(getSearchData());
+    console.log('Imperial');
 });
